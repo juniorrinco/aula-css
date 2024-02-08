@@ -56,3 +56,14 @@ footer {
     width: 30px;
     height: auto;
 }
+
+/* Estilos para centralizar o Navbar */
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-collapse {
+    justify-content: center;
+}

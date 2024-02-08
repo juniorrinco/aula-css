@@ -6,64 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site</title>
     <link rel="stylesheet" href="style.css">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap.bundle.min.js"></script>
+    <style>
+        /* Estilos para centralizar o Accordion */
+        .accordion-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Defina a altura conforme necessário */
+        }
+
+        .accordion-wrapper {
+            width: 80%;
+            /* Defina a largura conforme necessário */
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="#quem-sou-eu">Quem Sou Eu</a></li>
-                    <li><a href="#experiencias">Experiências</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section id="quem-sou-eu">
-        <div class="container">
-            <h1>Quem Sou Eu</h1>
-            <p>Meu nome é João Silva. Aos 78 anos de idade, decidi seguir uma nova paixão: a programação. Apesar da
-                minha idade avançada, não deixei que isso me impedisse de aprender algo novo e emocionante.</p>
-            <p>Desde então, tenho mergulhado no mundo da codificação, explorando diferentes linguagens de programação e
-                projetando aplicativos que tornam a vida mais fácil para pessoas de todas as idades.</p>
-            <p>Embora tenha começado tarde, estou empolgado para continuar minha jornada como programador, sempre
-                buscando aprender, crescer e contribuir para a comunidade de desenvolvimento de software.</p>
-
+    <div class="accordion-container">
+        <div class="accordion-wrapper">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Paineis bonitinhos
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Aqui você encontrará painéis bonitinhos e procv.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Relatórios bonitinhos
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Aqui você vai encontrar relatórios bonitinhos já com a fórmnula procv.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Solicitação RELATÓRIOS/PAINÉIS bonitinhos
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Isso mesmo que leu, agora você pode solicitar painel bonitinho pra nós e relatórios também.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <section id="experiencias">
-        <div class="container">
-            <h1>Experiências</h1>
-            <p>Ainda estou no início da minha carreira como programador, mas estou ansioso para compartilhar minha
-                jornada à medida que aprendo e cresço nesta nova área.</p>
-        </div>
-    </section>
+    </div>
 
     <section id="contato">
         <div class="container">
             <h1>Contato</h1>
             <p>Entre em contato comigo através do formulário abaixo:</p>
             <form action="enviar_email.php" method="post">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required><br>
-
-                <label for="telefone">Telefone:</label><br>
-                <input type="tel" id="telefone" name="telefone" required><br>
-
-                <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" required><br>
-
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br>
-
-                <button type="submit">Enviar</button>
+                <!-- Campos do formulário de contato aqui -->
             </form>
         </div>
     </section>
+
+
     <footer>
         <div class="container">
             <ul class="social-links">
